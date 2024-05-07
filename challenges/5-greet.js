@@ -1,3 +1,4 @@
+//npm install inquirer@8.0.0
 const inquirer = require("inquirer");
 
 const greet = () => {

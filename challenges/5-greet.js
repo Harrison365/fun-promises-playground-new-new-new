@@ -10,7 +10,7 @@ const greet = () => {
       },
     ])
     .then((answers) => {
-      console.log(`Hello, ${answers.name}!!!`);
+      console.log(`Hello, ${answers.name}!`);
     });
 };
 

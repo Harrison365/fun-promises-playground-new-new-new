@@ -38,7 +38,7 @@ describe("fetchAllOwners()", () => {
         "schrodinger",
         "foucault",
         "vel",
-        "calvin"
+        "calvin",
       ]);
     });
   });
@@ -61,7 +61,7 @@ describe("fetchAllCats()", () => {
         "M. Fang",
         "Nibbles",
         "Opal",
-        "Tot"
+        "Tot",
       ]);
     });
   });

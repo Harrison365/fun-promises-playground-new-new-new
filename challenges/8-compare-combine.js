@@ -43,35 +43,34 @@ let promises = [
   fs.readFile(`${__dirname}/super-secret-message.txt`, "utf-8"),
 ];
 
-Promise.all(promises)
-  .then((resultArr) => {
-    console.log(resultArr[0].length, resultArr[1].length);
-    if (resultArr[0].length > resultArr[1].length) {
-      console.log(
-        `secret-message.txt is longer by ${
-          resultArr[0].length - resultArr[1].length
-        } characters`
-      );
-    } else if (resultArr[0].length < resultArr[1].length) {
-      console.log(
-        `super-secret-message.txt is longer by ${
-          resultArr[1].length - resultArr[0].length
-        } characters`
-      );
-    } else {
-      console.log("both messages are the same length");
-    }
-
-    let joinedStrings = resultArr[0] + " " + resultArr[1];
-    return fs.writeFile(
-      `${__dirname}/joined-message-promise-all.txt`,
-      joinedStrings,
-      "utf8"
+Promise.all(promises).then((resultArr) => {
+  console.log(resultArr[0].length, resultArr[1].length);
+  if (resultArr[0].length > resultArr[1].length) {
+    console.log(
+      `secret-message.txt is longer by ${
+        resultArr[0].length - resultArr[1].length
+      } characters`
     );
-  })
-  .then(() => {
-    console.log("written using promise.all()");
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+  } else if (resultArr[0].length < resultArr[1].length) {
+    console.log(
+      `super-secret-message.txt is longer by ${
+        resultArr[1].length - resultArr[0].length
+      } characters`
+    );
+  } else {
+    console.log("both messages are the same length");
+  }
+
+  let joinedStrings = resultArr[0] + " " + resultArr[1];
+  fs.writeFile(
+    `${__dirname}/joined-message-promise-all2.txt`,
+    joinedStrings,
+    "utf8"
+  );
+});
+// .then(() => {
+//   console.log("written using promise.all()");
+// })
+// .catch((err) => {
+//   console.log(err);
+// });
